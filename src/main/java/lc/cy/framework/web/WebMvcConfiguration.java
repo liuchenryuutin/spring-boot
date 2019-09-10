@@ -27,9 +27,10 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
 	}
 
 	@Bean
-	public CustomScopeConfigurer threadScope() {
+	public CustomScopeConfigurer threadScopeConfig() {
 		CustomScopeConfigurer configurer = new CustomScopeConfigurer();
 		configurer.addScope(Constant.Scope.Thread, new ThreadScopeConfigurer());
 		return configurer;
 	}
+
 }

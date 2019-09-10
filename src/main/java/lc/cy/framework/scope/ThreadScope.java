@@ -2,6 +2,13 @@ package lc.cy.framework.scope;
 
 import java.util.Stack;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+import lc.cy.framework.constant.Constant;
+
+@Component
+@Scope(scopeName = Constant.Scope.Thread)
 public class ThreadScope {
 
 	private String controllerName;

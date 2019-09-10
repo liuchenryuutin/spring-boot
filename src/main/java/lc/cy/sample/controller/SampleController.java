@@ -6,18 +6,18 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lc.cy.sample.common.SimpleValidator;
+import lc.cy.sample.common.SampleValidator;
 import lc.cy.sample.model.SimpleModel;
 
 @RestController
 public class SampleController {
 
 	@Autowired
-	SimpleValidator validator;
+	SampleValidator validator;
 
 	@RequestMapping("/sample")
 	public String first(SimpleModel model) {
-		return "Hello simple";
+		return "Hello sample";
 	}
 
 	@InitBinder

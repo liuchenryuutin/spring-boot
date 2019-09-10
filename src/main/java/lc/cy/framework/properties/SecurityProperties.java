@@ -2,14 +2,18 @@ package lc.cy.framework.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
+@Component
 @PropertySource("classpath:properties/security.properties")
 @ConfigurationProperties(prefix = "login")
 public class SecurityProperties {
 
 	private String initUrl;
 
-	private String rocesserUrl;
+	private String processerUrl;
+
+	private String withoutlogin;
 
 	/**
 	 * @return the initUrl
@@ -26,17 +30,31 @@ public class SecurityProperties {
 	}
 
 	/**
-	 * @return the rocesserUrl
+	 * @return the processerUrl
 	 */
-	public String getRocesserUrl() {
-		return rocesserUrl;
+	public String getProcesserUrl() {
+		return processerUrl;
 	}
 
 	/**
-	 * @param rocesserUrl the rocesserUrl to set
+	 * @param processerUrl the processerUrl to set
 	 */
-	public void setRocesserUrl(String rocesserUrl) {
-		this.rocesserUrl = rocesserUrl;
+	public void setProcesserUrl(String processerUrl) {
+		this.processerUrl = processerUrl;
+	}
+
+	/**
+	 * @return the withoutlogin
+	 */
+	public String getWithoutlogin() {
+		return withoutlogin;
+	}
+
+	/**
+	 * @param withoutlogin the withoutlogin to set
+	 */
+	public void setWithoutlogin(String withoutlogin) {
+		this.withoutlogin = withoutlogin;
 	}
 
 }
