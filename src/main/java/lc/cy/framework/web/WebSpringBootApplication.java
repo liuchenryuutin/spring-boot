@@ -1,6 +1,11 @@
 package lc.cy.framework.web;
 
+import org.springframework.beans.factory.config.CustomScopeConfigurer;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.SimpleThreadScope;
+
+import lc.cy.framework.constant.Constant;
 
 @Configuration
 public class WebSpringBootApplication {
@@ -15,4 +20,10 @@ public class WebSpringBootApplication {
 //		return filterRegistrationBean;
 //	}
 
+	@Bean
+	public CustomScopeConfigurer customScopeConfigurer() {
+		CustomScopeConfigurer configurer = new CustomScopeConfigurer();
+		configurer.addScope(Constant.Scope.Thread, new SimpleThreadScope());
+		return configurer;
+	}
 }
